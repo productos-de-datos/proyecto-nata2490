@@ -12,7 +12,7 @@
     },
     {
       "name": "Test 02",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "setup": "pip3 install matplotlib sklearn pandas openpyxl xlrd xlwt wget xlsxwriter luigi pytest pylint",
       "run": "python3 grader.py 02",
       "input": "",
       "output": "",
@@ -62,7 +62,7 @@
     },
     {
       "name": "Test 07",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "setup": "pip3 install matplotlib sklearn pandas openpyxl xlrd xlwt xlsxwriter luigi pytest pylint",
       "run": "python3 grader.py 07",
       "input": "",
       "output": "",
@@ -102,7 +102,7 @@
     },
     {
       "name": "Test 11",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "setup": "pip3 install matplotlib sklearn pandas numpy luigi pytest pylint",
       "run": "python3 grader.py 11",
       "input": "",
       "output": "",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Test 12",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "setup": "pip3 install matplotlib sklearn pandas numpy luigi pytest pylint",
       "run": "python3 grader.py 12",
       "input": "",
       "output": "",
@@ -123,7 +123,7 @@
     {
       "name": "Test 13",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "pylint",
+      "run": "pylint *.py",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -133,7 +133,7 @@
     {
       "name": "Test 14",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "pytest",
+      "run": "pytest src/data/*.py",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -173,7 +173,7 @@
     {
       "name": "Test 18",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "python3 src/data/create_data_lake.py",
+      "run": "rm -rf data_lake | python3 src/data/create_data_lake.py",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -233,7 +233,7 @@
     {
       "name": "Test 24",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "python3 src/models/train_daily_data.py",
+      "run": "python3 src/models/train_daily_model.py",
       "input": "",
       "output": "",
       "comparison": "included",
