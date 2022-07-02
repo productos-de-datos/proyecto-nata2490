@@ -1,8 +1,7 @@
-def create_data_lake():
-    """Cree el data lake con sus capas.
-
-    Esta función debe crear la carpeta `data_lake` en la raiz del proyecto. El data lake contiene
-    las siguientes subcarpetas:
+"""
+Módulo creación Data Lake
+-------------------------------------------------------------------------------
+Se crea un Data Lake con sus carpetas y subcarpetas:
 
     ```
     .
@@ -19,12 +18,28 @@ def create_data_lake():
 
     ```
 
+"""
+import os
 
-    """
-    raise NotImplementedError("Implementar esta función")
+def create_data_lake():
+    try:
+        os.mkdir('./data_lake/')
+        parent_dir = 'data_lake/'
+        carpetas = ['landing', 'raw', 'cleansed', 'business']
+        [os.mkdir(os.path.join(parent_dir, c)) for c in carpetas]
+        parent_dir = 'data_lake/business/'
+        carpetas = ['reports', 'features', 'forecasts']
+        [os.mkdir(os.path.join(parent_dir, c)) for c in carpetas]
+        parent_dir = 'data_lake/business/reports/'
+        directory = 'figures'
+        os.mkdir(os.path.join(parent_dir, directory))
+    except:
+        raise NotImplementedError("Implementar esta función")
 
 
 if __name__ == "__main__":
-    import doctest
 
+    import doctest
     doctest.testmod()
+    
+    create_data_lake()
